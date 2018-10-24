@@ -1,0 +1,297 @@
+@import './ionicons.min.css';
+@import './palette.scss';
+@import './normalize.css';
+@import './skeleton.scss';
+
+html, body, .wrapper {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    min-height: 390px;
+    min-width: 830px;
+}
+
+/* Header -------------------- */
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: $color-primary-4;
+
+    .logo {
+        position: absolute;
+        top: 3px;
+        right: 12px;
+        height: 74px;
+    }
+}
+
+/* Navigation -------------------- */
+
+nav {
+    top: 32px;
+    position: absolute;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        :after {
+            display: block;
+            clear: both;
+            content: '';
+        }
+
+        li {
+            float: left;
+            margin: 0;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            a {
+                &.active {
+                    color: #1b5454;
+
+                    .nav-link-content {
+                        background: #9AB6B6;
+                    }
+                }
+
+                .nav-link-content {
+                    height: 38px;
+                    padding: 9px 45px 0 45px;
+                    box-sizing: border-box;
+                    border-top-left-radius: 20px;
+                    border-top-right-radius: 20px;
+                    background: $color-primary-3;
+                }
+            }
+
+            &.dark {
+                a.active {
+                    color: #d8efef;
+
+                    .nav-link-content {
+                        background: $color-primary-0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Tabs -------------------- */
+
+.tab {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $color-primary-1;
+}
+
+.tab-general,
+.tab-settings {
+    padding: 30px;
+}
+
+.tab-general textarea {
+    width: 100%;
+    height: 100%;
+}
+
+/* Action bar -------------------- */
+
+.action-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    border-bottom: 1px solid $color-primary-4;
+    background: $color-primary-0;
+
+    input,
+    button {
+        margin-right: 10px;
+    }
+
+    input:last-child,
+    button:last-child {
+        margin-right: 0;
+    }
+
+    .group {
+            position: absolute;
+        top: 15px;
+    }
+
+    .group.group-left {
+        left: 14px;
+    }
+
+    .group.group-right {
+        right: 14px;
+    }
+
+    .form-create {
+        display: inline-block;
+    }
+}
+
+/* Task details -------------------- */
+
+.task-details {
+    position: absolute;
+    top: 71px;
+    left: 400px;
+    bottom: 35px;
+    right: 0;
+    background: #fff2d7;
+
+    input,
+    textarea {
+        width: 100%;
+        height: 100%;
+    }
+
+    .details-title {
+        position: absolute;
+        top: 18px;
+        left: 18px;
+        width: 269px;
+    }
+
+    .override-timer {
+        width: 126px;
+        position: absolute;
+        top: 18px;
+        left: 296px;
+
+        button {
+            display: none;
+        }
+    }
+
+    .details-notes {
+        position: absolute;
+        top: 65px;
+        left: 18px;
+        bottom: 18px;
+        right: 18px;
+    }
+}
+
+/* Task list -------------------- */
+
+.task-list-wrapper {
+    user-select: none;
+    position: absolute;
+    top: 71px;
+    left: 0;
+    bottom: 35px;
+    width: 400px;
+    background: $color-primary-1;
+    overflow-y: scroll;
+}
+
+.task-list {
+    list-style: none;
+}
+
+.task-row {
+    list-style: none;
+    height: 67px;
+    position: relative;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.task-row.active {
+    background: linear-gradient(to right, $color-primary-1 0%,$color-secondary-1-1 100%);
+}
+
+.task-row:nth-child(even) {
+    background: #8dabab;
+}
+
+.task-row:nth-child(even).active {
+    background: linear-gradient(to right, #8dabab 0%,$color-secondary-1-1 100%);
+}
+
+.task-row-title {
+    position: absolute;
+    top: 22px;
+    left: 12px;
+    right: 232px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.task-row-timer {
+    position: absolute;
+    top: 22px;
+    right: 158px;
+}
+
+.task-row-buttons {
+    position: absolute;
+    top: 18px;
+    right: 14px;
+}
+
+.task-row-buttons button {
+    margin-left: 7px;
+}
+
+.task-status-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 5px 12px;
+    border-top: 1px solid #266B6B;
+    background: #578B8B;
+    color: #d8efef;
+}
+
+/* Additional buttons styling -------------------- */
+
+button.btn-icon {
+    position: relative;
+    padding: 0;
+    font-size: 17px;
+    width: 30px;
+    height: 30px;
+}
+
+button.red {
+    background: $color-secondary-2-0;
+    color: #9a3333;
+    border: 1px solid $color-secondary-2-2;
+}
+
+button.red:active {
+    background: $color-secondary-2-2;
+}
+
+.btn-icon i {
+    position: relative;
+    top: -4px;
+    left: 1px;
+}
