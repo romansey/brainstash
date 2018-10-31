@@ -34,3 +34,5 @@ the time. Contributions are welcome as well!
 * Add a new, responsive design
 * Implement a backend service to optionally(!) allow users to authenticate
   and sync tasks across devices
+* Convert logo to SVG
+* Improve the entire CSS and font situation
